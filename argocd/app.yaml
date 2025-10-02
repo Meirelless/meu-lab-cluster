@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/Meirelless/meu-lab-cluster'
-    targetRevision: HEAD
+    targetRevision: main
     path: k8s-manifests
   destination:
     server: https://kubernetes.default.svc
