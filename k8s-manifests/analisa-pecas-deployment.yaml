@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: analisa-pecas
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: analisa-pecas
+  template:
+    metadata:
+      labels:
+        app: analisa-pecas
+    spec:
+      containers:
+      - name: analisa-pecas
+        image: franciscomeirelles/analisa-pecas:latest   # Docker Hub
+        ports:
+        - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: analisa-pecas
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8000
+  selector:
+    app: analisa-pecas
