@@ -5,7 +5,7 @@ from sentence_transformers import SentenceTransformer
 
 # Configuração do OpenSearch
 client = OpenSearch(
-    hosts=[{"host": "supp-opensearch-hml.pgmbh.org", "port": 443}],
+    hosts=[{"host": "supp-opensearch-api.pgmbh.org", "port": 9200}],
     http_auth=("admin", "supp20Pgm25"),
     use_ssl=True,
     verify_certs=False
